@@ -1,1 +1,1 @@
-<?php header('Location: /client/index.js'); ?>
+<?php header('Location: /client/src/pages/login/login.jsx'); ?>
