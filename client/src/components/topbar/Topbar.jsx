@@ -94,14 +94,14 @@ export default function Topbar() {
           </div>
         </div> */}
        
-       <Link to={`/profile/${user.username}`}>
+       {/* <Link to={`/profile/${user.username}`}>
           <div   className="topbarImg">
           {
                         user.profilePicture?.map((item, index) => (
                             <div key={index}>
                                 {
                                    
-                                    imageShow1(item.url)
+                                    imageShow3(item.url)
                                 }
                             </div>
                         ))
@@ -110,7 +110,7 @@ export default function Topbar() {
           
              <span class="tooltiptext2">Trang cá nhân</span>
           </div>
-        </Link>
+        </Link> */}
         
         <Link to="/logout">
           <div className="logout">

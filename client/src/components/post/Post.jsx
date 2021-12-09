@@ -56,7 +56,7 @@ export default function Post({ post }) {
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
-          <Link to={`/profile/${user.username}`}>
+          {/* <Link to={`/profile/${user.username}`}>
               <img
                 className="postProfileImg"
                 src={
@@ -66,7 +66,7 @@ export default function Post({ post }) {
                 }
                 alt=""
               />
-            </Link>
+            </Link> */}
             <span className="postUsername">{user.username}</span>
             <span className="postDate">{format(post.createdAt)}</span>
           </div>

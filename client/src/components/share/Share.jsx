@@ -9,7 +9,7 @@ import {
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
-
+import { imageShow1 } from "../../pages/messenger/mediaShow";
 export default function Share() {
   const { user } = useContext(AuthContext);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -43,15 +43,19 @@ export default function Share() {
     <div className="share">
       <div className="shareWrapper">
         <div className="shareTop">
-          <img
-            className="shareProfileImg"
-            src={
-              user.profilePicture
-                ? PF + user.profilePicture
-                : PF + "person/noAvatar.png"
-            }
-            alt=""
-          />
+          {/* <div className="shareProfileImg">
+          {
+                        user.profilePicture?.map((item, index) => (
+                            <div key={index}>
+                                {
+                                   
+                                    imageShow1(item.url)
+                                }
+                            </div>
+                        ))
+                    }
+          </div> */}
+          
           <input
             placeholder={"Bạn đang nghỉ gì vậy " + user.username + "?"}
             className="shareInput"

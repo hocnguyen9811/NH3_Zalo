@@ -32,12 +32,7 @@ const EditProfile = ({setOnEdit}) => {
     // }, [auth.user])
 
 
-    const changeAvatar = (e) => {
-        const file = e.target.files[0]
 
-
-        setAvatar(file)
-    }
 
     const handleInput = e => {
         const { name, value } = e.target
@@ -51,10 +46,7 @@ const EditProfile = ({setOnEdit}) => {
 
     return (
         <div className="edit_profile">
-            <button className="btn btn-danger btn_close"
-            onClick={() => setOnEdit(false)}>
-                Close
-            </button>
+           
 
             <form onSubmit={handleSubmit}>
                 {/* <div className="info_avatar">
@@ -73,42 +65,37 @@ const EditProfile = ({setOnEdit}) => {
                     <div className="position-relative">
                         <input type="text" className="form-control" id="username"
                         name="username" value={username} onChange={handleInput} />
-                        <small className="text-danger position-absolute"
+                        {/* <small className="text-danger position-absolute"
                         style={{top: '50%', right: '5px', transform: 'translateY(-50%)'}}>
                             {username.length}/25
-                        </small>
+                        </small> */}
                     </div>
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="city">city</label><br></br>
+                    <label htmlFor="city">Địa chỉ</label><br></br>
                     <input type="text" name="city" value={city}
                     className="form-control" onChange={handleInput} />
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="from">from</label>
+                    <label htmlFor="from">Giới tính</label>
                     <br></br>
                     <input type="text" name="from" value={from}
                     className="form-control" onChange={handleInput} />
                 </div>
-
-                
-
-               
-
-                <label htmlFor="relationship">Quan hệ</label>
-                <div className="input-group-prepend px-0 mb-4">
-                    <select name="relationship" id="relationship" value={relationship}
-                    className="custom-select text-capitalize"
-                    onChange={handleInput}>
-                        <option value="male">1</option>
-                        <option value="female">2</option>
-                        <option value="other">3</option>
-                    </select>
+                <div className="form-group">
+                    <label htmlFor="relationship">Ngày sinh</label>
+                    <br></br>
+                    <input type="text" name="relationship" value={relationship}
+                    className="form-control" onChange={handleInput} />
                 </div>
-
+<br></br>
                 <button className="btn btn-info w-100" type="submit">Save</button>
+                <button className="btn btn-danger btn_close"
+            onClick={() => setOnEdit(false)}>
+                Close
+            </button>
             </form>
         </div>
     )
