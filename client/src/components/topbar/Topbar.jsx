@@ -7,6 +7,7 @@ import { Link, Redirect } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import { imageShow1 } from "../../pages/messenger/mediaShow";
 
 
 
@@ -95,15 +96,18 @@ export default function Topbar() {
        
        <Link to={`/profile/${user.username}`}>
           <div   className="topbarImg">
-          <img
-             src={
-              user.profilePicture
-                ? PF + user.profilePicture
-                : PF + "person/noAvatar.png"
-            }
-            alt=""
+          {
+                        user.profilePicture?.map((item, index) => (
+                            <div key={index}>
+                                {
+                                   
+                                    imageShow1(item.url)
+                                }
+                            </div>
+                        ))
+                    }
           
-          />
+          
              <span class="tooltiptext2">Trang cá nhân</span>
           </div>
         </Link>
